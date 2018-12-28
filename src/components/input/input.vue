@@ -20,6 +20,7 @@ export default {
   },
   watch: {
     value(val) {
+      // 父组件中value变化，则子组件中的currentValue随之变化
       this.currentValue = val;
     }
   },
@@ -31,6 +32,7 @@ export default {
       this.dispatch("iFormItem", "on-form-change", value);
     },
     handleBlur() {
+      失去焦点触发
       this.dispatch("iFormItem", "on-form-blur", this.currentValue);
     }
   }
